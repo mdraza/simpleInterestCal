@@ -1,0 +1,80 @@
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Questrial', sans-serif;
+}
+
+.mt-20 {
+  margin-top: 20px;
+}
+
+.mt-30 {
+  margin-top: 30px;
+}
+
+.container {
+  padding: 25px;
+}
+
+.container h3 {
+  text-align: center;
+  color: #1565c0;
+}
+
+.txt {
+  text-align: center;
+  color: #1565c0;
+  margin: 0;
+}
+
+.calBtn {
+  text-align: center;
+  margin-top: 25px;
+}
+
+.calBtn a {
+  background: #1565c0;
+  color: #ffffff;
+  width: 100%;
+}
+
+.calBtn a:hover {
+  background: #1565c0;
+}
+
+.input-field .prefix {
+  color: #1565c0;
+}
+
+.input-field label {
+  color: #1565c0 !important;
+}
+
+.input-field input[type=text]:focus + label {
+  color: #1565c0 !important;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #1565c0 !important;
+  -webkit-box-shadow: 0 1px 0 0 #1565c0 !important;
+          box-shadow: 0 1px 0 0 #1565c0 !important;
+}
+
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #1565c0 !important;
+  -webkit-box-shadow: 0 1px 0 0 #1565c0 !important;
+          box-shadow: 0 1px 0 0 #1565c0 !important;
+}
+
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #1565c0 !important;
+  -webkit-box-shadow: 0 1px 0 0 #1565c0 !important;
+          box-shadow: 0 1px 0 0 #1565c0 !important;
+}
+
+.input-field .prefix.active {
+  color: #1565c0 !important;
+}
+/*# sourceMappingURL=style.css.map */

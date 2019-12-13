@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Interest Calculator</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Questrial&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h3>Simple Interest Calculator</h3>
+        <div class="card-panel mt-30">
+            <form action="">
+                <div class="row">
+                    <div class="col m6">
+                        <div class="input-field">
+                            <i class="material-icons prefix">arrow_right_alt</i>
+                            <input id="pamt" type="text" class="validate">
+                            <label for="pamt">Principle Amount</label>
+                        </div>
+                        <br>
+                        <div class="input-field">
+                            <i class="material-icons prefix">arrow_right_alt</i>
+                            <input id="intRate" type="text" class="validate">
+                            <label for="intRate">Interest Rate</label>
+                        </div>
+                    </div>
+
+                    <div class="col m6">
+                        <div class="input-field">
+                            <i class="material-icons prefix">arrow_right_alt</i>
+                            <input id="time" type="text" class="validate">
+                            <label for="time">Time in year</label>
+                        </div>
+
+                        <br>
+                        <div class="calBtn">
+                            <a class="waves-effect waves-light btn" onclick="siCal()">Calculate</a>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <section class="chart">
+        <div class="container">
+            <h4 class="txt">Chart</h4>
+            <canvas id="myChart"></canvas>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.datepicker').datepicker();
+        });
+
+        function siCal() {
+            var p = document.getElementById("pamt").value;
+            var r = document.getElementById("intRate").value;
+            var t = document.getElementById("time").value;
+            var si = parseInt(p) * parseInt(r) * parseInt(t) / 100;
+            var totAmnt = (parseInt(p) + parseInt(si));
+
+            let myChart = document.getElementById("myChart").getContext('2d');
+
+            // Global Option
+            Chart.defaults.global.defaultFontFamily = 'verdana';
+            Chart.defaults.global.defaultFontSize = 15;
+            Chart.defaults.global.defaultFontColor = '#777';
+
+            let populationChart = new Chart(myChart, {
+                type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+                data: {
+                    labels: ['Principal Amount', 'Interest Amount', 'Total Amount'],
+                    datasets: [{
+                        label: 'Amount',
+                        data: [
+                            p,
+                            si,
+                            totAmnt,
+                        ],
+                        backgroundColor: [
+                            'rgba(54, 162, 235, 0.7)',
+                            // 'rgba(255, 99, 132, 0.7)',
+                            'rgba(255,99,132,0.7)',
+                            'rgba(255, 206, 86, 0.7)'
+                        ],
+                        borderWidth: 1,
+                        borderColor: '#777',
+                        hoverBorderWidth: 2,
+                        hoverBorderColor: '#000'
+                    }]
+                },
+                options: {
+                    title: {
+                        display: false,
+                        text: 'Simple Interest Graph',
+                        fontSize: 20
+                    },
+                    legend: {
+                        display: true,
+                        position: 'top',
+                        labels: {
+                            fontColor: '#000'
+                        }
+                    },
+                    layout: {
+                        padding: {
+                            top: 20,
+                            left: 0,
+                            right: 0,
+                            bottom: 0
+                        }
+                    },
+                    tooltips: {
+                        enabled: true
+                    }
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>
