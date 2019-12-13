@@ -59,11 +59,6 @@
 
 
 
-
-
-
-
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
@@ -73,21 +68,22 @@
         });
 
         function siCal() {
-            var p = document.getElementById("pamt").value;
-            var r = document.getElementById("intRate").value;
-            var t = document.getElementById("time").value;
-            var si = parseInt(p) * parseInt(r) * parseInt(t) / 100;
-            var totAmnt = (parseInt(p) + parseInt(si));
+            let p, r, t, si, totAmnt, myChart, populationChart;
+            p = document.getElementById("pamt").value;
+            r = document.getElementById("intRate").value;
+            t = document.getElementById("time").value;
+            si = parseInt(p) * parseInt(r) * parseInt(t) / 100;
+            totAmnt = (parseInt(p) + parseInt(si));
 
-            let myChart = document.getElementById("myChart").getContext('2d');
+            myChart = document.getElementById("myChart").getContext('2d');
 
             // Global Option
             Chart.defaults.global.defaultFontFamily = 'verdana';
             Chart.defaults.global.defaultFontSize = 15;
             Chart.defaults.global.defaultFontColor = '#777';
 
-            let populationChart = new Chart(myChart, {
-                type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            populationChart = new Chart(myChart, {
+                type: 'bar', 
                 data: {
                     labels: ['Principal Amount', 'Interest Amount', 'Total Amount'],
                     datasets: [{
@@ -99,7 +95,6 @@
                         ],
                         backgroundColor: [
                             'rgba(54, 162, 235, 0.7)',
-                            // 'rgba(255, 99, 132, 0.7)',
                             'rgba(255,99,132,0.7)',
                             'rgba(255, 206, 86, 0.7)'
                         ],
