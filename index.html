@@ -83,7 +83,7 @@
             Chart.defaults.global.defaultFontColor = '#777';
 
             populationChart = new Chart(myChart, {
-                type: 'bar', 
+                type: 'doughnut', 
                 data: {
                     labels: ['Principal Amount', 'Interest Amount', 'Total Amount'],
                     datasets: [{
@@ -94,14 +94,22 @@
                             totAmnt,
                         ],
                         backgroundColor: [
-                            'rgba(54, 162, 235, 0.7)',
-                            'rgba(255,99,132,0.7)',
-                            'rgba(255, 206, 86, 0.7)'
+                            'rgba(54, 162, 235, 0.3)',
+                            'rgba(255,99,132,0.3)',
+                            'rgba(255, 206, 86, 0.3)'
                         ],
                         borderWidth: 1,
-                        borderColor: '#777',
+                        borderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255,99,132, 1)',
+                            'rgba(255, 206, 86, 1)'
+                        ],
                         hoverBorderWidth: 2,
-                        hoverBorderColor: '#000',
+                        hoverBorderColor: [
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255,99,132, 1)',
+                            'rgba(255, 206, 86, 1)'   
+                        ]
                     }]
                 },
                 options: {
