@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Questrial', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .mt-20 {
@@ -19,6 +19,12 @@ body {
     h3 {
         text-align: center;
         color: #1565c0;
+        margin: 10px 0 40px;
+        font-size: 40px;
+    }
+    h4{
+        color: #1565c0;
+        font-size: 30px;
     }
 }
 .txt{
@@ -40,6 +46,11 @@ body {
         }
     }
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 .input-field .prefix {
     color: #1565c0
@@ -49,28 +60,25 @@ body {
     color: #1565c0 !important;
 }
 
-.input-field input[type=text]:focus+label {
+.input-field input[type=number]:focus+label {
     color: #1565c0 !important;
 }
 
-.input-field input[type=text]:focus {
+.input-field input[type=number]:focus {
     border-bottom: 1px solid #1565c0 !important;
     box-shadow: 0 1px 0 0 #1565c0 !important;
 }
 
-.input-field input[type=text].valid {
+.input-field input[type=number].valid {
     border-bottom: 1px solid#1565c0 !important;
     box-shadow: 0 1px 0 0 #1565c0 !important;
 }
 
-.input-field input[type=text].invalid {
+.input-field input[type=number].invalid {
     border-bottom: 1px solid #1565c0 !important;
     box-shadow: 0 1px 0 0 #1565c0 !important;
 }
 
 .input-field .prefix.active {
     color: #1565c0 !important;
-}
-.chart{
-    // padding: 15px;
 }
